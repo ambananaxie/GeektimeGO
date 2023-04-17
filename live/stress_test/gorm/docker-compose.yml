@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+  userapp-mysql:
+    restart: always
+    image: mysql:5.7
+    container_name: userapp-mysql
+    volumes:
+      - type: bind
+        source: ./scripts/mysql/
+        target: /docker-entrypoint-initdb.d/
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    healthcheck:
+      timeout: 2s
+      retries: 30
+    ports:
+      - 3306:3306
+  userapp-shadow:
+    restart: always
+    image: mysql:5.7
+    container_name: userapp-mysql
+    volumes:
+      - type: bind
+        source: ./scripts/shadow/
+        target: /docker-entrypoint-initdb.d/
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    healthcheck:
+      timeout: 2s
+      retries: 30
+    ports:
+      - 3307:3306

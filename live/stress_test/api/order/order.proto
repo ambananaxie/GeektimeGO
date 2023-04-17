@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "/gen;orderapi";
+
+service OrderService {
+  rpc CreateOrder(CreateOrderReq) returns (CreateOrderResp);
+  rpc FindById(FindByIdReq) returns (FindByIdResp);
+}
+
+message FindByIdReq {
+  uint64 id =1;
+}
+
+message FindByIdResp {
+  Order Order = 1;
+}
+
+message CreateOrderReq {
+  Order Order = 1;
+}
+
+message CreateOrderResp {
+  Order Order = 1;
+}
+
+message Order {
+  uint64 id = 1;
+}
