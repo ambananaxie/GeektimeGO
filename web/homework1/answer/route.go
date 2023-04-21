@@ -278,11 +278,11 @@ func (m *matchInfo) addValue(key string, value string) {
 }
 
 // type Node interface {
-	// 如何匹配的问题
-	// 在我的 web 小课
-	// 1. 用户是没有办法注册一个自定义的实现
-	// 2. 难以解决优先级的问题
-	// Match() bool
+// 如何匹配的问题
+// 在我的 web 小课
+// 1. 用户是没有办法注册一个自定义的实现
+// 2. 难以解决优先级的问题
+// Match() bool
 // }
 
 // type staticNode struct {
